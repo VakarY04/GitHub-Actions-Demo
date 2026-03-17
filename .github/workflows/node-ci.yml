@@ -2,11 +2,11 @@ name: Node CI  Pipeline Demo
 
 on : [push]
 
-jobs:
-    build:
-        runs-on: [ubuntu-latest ,  window-latest]
+jobs: #What you to perform like on push, on pull request or schedule
+    build: 
+        runs-on: [ubuntu-latest ,  windows-latest] #Operting system
 
-        steps: 
+        steps: #individual steps
             - name: Checkout code
               uses: actions/checkout@v4
 
