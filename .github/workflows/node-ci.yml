@@ -1,0 +1,28 @@
+name: Node CI  Pipeline Demo
+
+on : [push]
+
+jobs:
+    build:
+        runs-on: [ubuntu-latest ,  window-latest]
+
+        steps: 
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+
+            - name: Check Node version
+              run: node -v
+
+            - name: Run Application
+              run: node index.js
+
+            - name: Install Dependency
+              run: npm install
+
+            - name: Run Test
+              run: npm test
